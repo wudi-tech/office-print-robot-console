@@ -1,0 +1,9 @@
+{
+  "name": "办公车载打印机器人",
+  "short_name": "车载打印",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f7f2",
+  "theme_color": "#f7f7f2",
+  "icons": []
+}

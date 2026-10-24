@@ -1,0 +1,186 @@
+{
+  "description": "Included original files; excludes this generated manifest and new test/validation helpers.",
+  "included_original_files": [
+    {
+      "source_relative_path": ".gitignore",
+      "source_sha256": "c74da3f7c04553c69e47794f27405c47fe1d2bb3aac96c8568165405917da281",
+      "public_sha256": "b0333fd27bf7174c507353b3c18778d61c7b430536d1acf6ac7c823154a7d8e7",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "package.json",
+      "source_sha256": "b0b717195af2b7c0155dcca2ea4613a43e6770e8d01039dc757a5f2fe1d8c341",
+      "public_sha256": "cc8f77f49b5dcb927640901ed6ea84aa7f659d6ff93bc5d5eec6760c604d17f1",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "README.md",
+      "source_sha256": "03def0bb1914a3bfd212393dc62e6c62d9ca7a210743c507d861ce7f7fc30c48",
+      "public_sha256": "17372c4025f8ed160216f40879224b8c776aeb73381356d63502cb3507ca92bc",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "web/app.js",
+      "source_sha256": "e27b6233a39ecd111aeff2ac0d65d3327b23622b8c46f5317a08c3c9759694c6",
+      "public_sha256": "e46f07878f93c57288a05dc4863d84c61674fb9a841cb593810c8ec7152e09f3",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "web/favicon.svg",
+      "source_sha256": "86b7684da453999af6184e0228a078bcd62aa872e60b5af85b85c625eecb6d5b",
+      "public_sha256": "86b7684da453999af6184e0228a078bcd62aa872e60b5af85b85c625eecb6d5b",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "web/index.html",
+      "source_sha256": "6d6294170fd742cd380f6a6a622867e637a08706b8483d62ac5a97fbf5c88a83",
+      "public_sha256": "6d6294170fd742cd380f6a6a622867e637a08706b8483d62ac5a97fbf5c88a83",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "web/manifest.webmanifest",
+      "source_sha256": "8771acced606e52391d9db4c4877e69b422bd733065121d0e49e9bd84b49f885",
+      "public_sha256": "8771acced606e52391d9db4c4877e69b422bd733065121d0e49e9bd84b49f885",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "web/server.mjs",
+      "source_sha256": "90bfb58028d761407927e494b0ac6dcb81244df9d99d4842569979b970c6a384",
+      "public_sha256": "3f1797defc37b2f7ac386dc79322f085f1da26bceaf7e5092e578d3284453899",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "web/styles.css",
+      "source_sha256": "c1cc26faf89bcc928168b347e150751f80cd43df468a5d64e4f27a187882f92c",
+      "public_sha256": "c1cc26faf89bcc928168b347e150751f80cd43df468a5d64e4f27a187882f92c",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "web/sw.js",
+      "source_sha256": "2ed809633db68d3d7f46c3b0fe0023a07bed7f847088382f6f1582f0b6ceba1d",
+      "public_sha256": "2ed809633db68d3d7f46c3b0fe0023a07bed7f847088382f6f1582f0b6ceba1d",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "项目文档/01_Web移植指南.md",
+      "source_sha256": "8f862c6c6cf72f04c3322d189b5ba299026e5e29f4a700fa10d5ec3df78b8350",
+      "public_sha256": "ebb2b18898ed9da7e26cba62042f53edbd104ac81be48282e207b90e0d7f1420",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "项目文档/02_RDK_X5_ROS2运行与底盘配合指南.md",
+      "source_sha256": "531641721a6a5ccb4c895f8dfcc656d82a3084b1a55b56e162d3697788cea686",
+      "public_sha256": "a049f72bc06f78b580c1017dab0df39f39f628638b686eeb194f3bfd7009165e",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "项目文档/03_地图导入和工位配置指南.md",
+      "source_sha256": "40d42c4d7419658a9c8b3b849b01131ba43f56cfb68b82135de56d09b61e3ef9",
+      "public_sha256": "74fc0ef273da7f5fde0bd3efba5246ea9c2debee7b90e64de4700446245b0574",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "项目文档/api.md",
+      "source_sha256": "551098666878804edb571bd3d5e1db27ad41d007c7db9c5b17a24f45f6b0a9d6",
+      "public_sha256": "75b41c9b5d86b9f27f2948045532bc85bc84335b18dc642d03ed07dc59b94bb5",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "项目文档/README.md",
+      "source_sha256": "6c49a91e0050f9a73f9503d610922c5c82c53ec998de6ab5bc96b9971f5656b0",
+      "public_sha256": "02747b01ed545e3555073bfbc1e56f60933f58bc47228fef02583aff9f1c5786",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "项目文档/ros2-integration.md",
+      "source_sha256": "daed9444b9b87b09eaedbc1cf204447bcd5f2de3836fdc956cd34ab275e7f38b",
+      "public_sha256": "683789505a19f3f4084ba0b1f0a6da3d70c596dba193f0c85aee09b95a3542d4",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "web/config/office_3f.json",
+      "source_sha256": "55acb2a2ecb6e00cb93225440db1266b36a0dd63959d9260cbd4af7b5e2ea651",
+      "public_sha256": "96ef1e3df29210814b0120fb2397b4d29f1da728fefd45b2b2fa06c6af4e3d00",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "web/maps/README.md",
+      "source_sha256": "defc513495840e36f81ca59112f0b186d94daf567722ae2e8580493d87a6b19b",
+      "public_sha256": "defc513495840e36f81ca59112f0b186d94daf567722ae2e8580493d87a6b19b",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/package.xml",
+      "source_sha256": "e793ea4332be1c387614f902d5543f71ba6bb2aa03d85d142c4bde6a2ca1949f",
+      "public_sha256": "e793ea4332be1c387614f902d5543f71ba6bb2aa03d85d142c4bde6a2ca1949f",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/setup.cfg",
+      "source_sha256": "89e8759bda0a8089fb016eb4abeef511017f040b560c6e2f00f53b08eda88eb3",
+      "public_sha256": "89e8759bda0a8089fb016eb4abeef511017f040b560c6e2f00f53b08eda88eb3",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/setup.py",
+      "source_sha256": "6fd52cb2efaa73478d1daf05a3955cfb99fae61dd68bb45abcd63a9928369b03",
+      "public_sha256": "6fd52cb2efaa73478d1daf05a3955cfb99fae61dd68bb45abcd63a9928369b03",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/config/office_3f.json",
+      "source_sha256": "55acb2a2ecb6e00cb93225440db1266b36a0dd63959d9260cbd4af7b5e2ea651",
+      "public_sha256": "96ef1e3df29210814b0120fb2397b4d29f1da728fefd45b2b2fa06c6af4e3d00",
+      "changed_in_public_copy": true
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/launch/bridge.launch.py",
+      "source_sha256": "4f9b81eec4b2805899dd57b1a5823994f9e1fb7270a004a9e4216a8e7f068a22",
+      "public_sha256": "4f9b81eec4b2805899dd57b1a5823994f9e1fb7270a004a9e4216a8e7f068a22",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/launch/robot_print_system.launch.py",
+      "source_sha256": "84b1cab05208948968a87f06aba3c79d93ae3e78669b7e2b93c10717105cc710",
+      "public_sha256": "84b1cab05208948968a87f06aba3c79d93ae3e78669b7e2b93c10717105cc710",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/launch/usb_printer.launch.py",
+      "source_sha256": "b2ad69f7b139b145832248c8584b002575e59b9025ab1736a5d817430fa15da8",
+      "public_sha256": "b2ad69f7b139b145832248c8584b002575e59b9025ab1736a5d817430fa15da8",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/print_robot_bridge/bridge_node.py",
+      "source_sha256": "05673ff9736ddbede744bfa14a750a4eb94f1f374f8ec640e714825452e5b172",
+      "public_sha256": "05673ff9736ddbede744bfa14a750a4eb94f1f374f8ec640e714825452e5b172",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/print_robot_bridge/usb_printer_node.py",
+      "source_sha256": "5c9b38c7be76b6d7f7e90983cf1de182050f31890462ee4b74220c5bf6831dbd",
+      "public_sha256": "5c9b38c7be76b6d7f7e90983cf1de182050f31890462ee4b74220c5bf6831dbd",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/print_robot_bridge/__init__.py",
+      "source_sha256": "4c5b29649ae746474e8fad5d84db7dcb6e726ed13a375f79156a4aa485e421be",
+      "public_sha256": "4c5b29649ae746474e8fad5d84db7dcb6e726ed13a375f79156a4aa485e421be",
+      "changed_in_public_copy": false
+    },
+    {
+      "source_relative_path": "ros2_ws/src/print_robot_bridge/resource/print_robot_bridge",
+      "source_sha256": "3a09fe62f3081409d8a7e79a713f4db57880a65f4dd1ccb7d13cf8546bd5887c",
+      "public_sha256": "3a09fe62f3081409d8a7e79a713f4db57880a65f4dd1ccb7d13cf8546bd5887c",
+      "changed_in_public_copy": false
+    }
+  ],
+  "excluded_source_files_count": 11,
+  "excluded_categories": [
+    "original Git metadata",
+    "historical screenshots",
+    "empty runtime logs",
+    "Python bytecode caches"
+  ]
+}

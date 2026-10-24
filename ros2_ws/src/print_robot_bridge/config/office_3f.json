@@ -1,0 +1,162 @@
+{
+  "id": "office_3f",
+  "name": "3F 工位与设备",
+  "floor": "3F 办公区",
+  "rosMap": {
+    "yaml": "",
+    "frameId": "map"
+  },
+  "uiMap": {
+    "viewBox": {
+      "width": 900,
+      "height": 520
+    },
+    "image": "",
+    "imageBounds": {
+      "x": 24,
+      "y": 34,
+      "width": 852,
+      "height": 452
+    }
+  },
+  "route": {
+    "verticalCorridors": [
+      250,
+      610
+    ],
+    "horizontalCorridors": [
+      130,
+      330
+    ]
+  },
+  "stations": [
+    {
+      "id": "A-01",
+      "label": "研发 A-01",
+      "type": "desk",
+      "marker": "A",
+      "selectable": true,
+      "ui": {
+        "x": 188,
+        "y": 151
+      },
+      "ros": {
+        "x": 1.2,
+        "y": 2.4,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "B-03",
+      "label": "财务 B-03",
+      "type": "desk",
+      "marker": "B",
+      "selectable": true,
+      "ui": {
+        "x": 188,
+        "y": 330
+      },
+      "ros": {
+        "x": 1.2,
+        "y": 0.1,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "F-00",
+      "label": "前台 F-00",
+      "type": "desk",
+      "marker": "F",
+      "selectable": true,
+      "ui": {
+        "x": 188,
+        "y": 434
+      },
+      "ros": {
+        "x": 1.2,
+        "y": -1.2,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "M-01",
+      "label": "会议室 M-01",
+      "type": "desk",
+      "marker": "M",
+      "selectable": true,
+      "ui": {
+        "x": 466,
+        "y": 151
+      },
+      "ros": {
+        "x": 4.1,
+        "y": 2.4,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "C-05",
+      "label": "产品 C-05",
+      "type": "desk",
+      "marker": "C",
+      "selectable": true,
+      "ui": {
+        "x": 466,
+        "y": 330
+      },
+      "ros": {
+        "x": 4.1,
+        "y": 0.1,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "D-02",
+      "label": "设计 D-02",
+      "type": "desk",
+      "marker": "D",
+      "selectable": true,
+      "ui": {
+        "x": 466,
+        "y": 434
+      },
+      "ros": {
+        "x": 4.1,
+        "y": -1.2,
+        "yaw": 1.57
+      }
+    },
+    {
+      "id": "E-04",
+      "label": "行政 E-04",
+      "type": "desk",
+      "marker": "E",
+      "selectable": true,
+      "ui": {
+        "x": 782,
+        "y": 330
+      },
+      "ros": {
+        "x": 7.5,
+        "y": 0.1,
+        "yaw": 3.14
+      }
+    },
+    {
+      "id": "CHG",
+      "label": "充电点",
+      "type": "dock",
+      "marker": "电",
+      "selectable": false,
+      "ui": {
+        "x": 782,
+        "y": 434
+      },
+      "ros": {
+        "x": 7.5,
+        "y": -1.2,
+        "yaw": 3.14
+      }
+    }
+  ]
+}

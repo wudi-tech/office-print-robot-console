@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <title>办公车载打印机器人</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Print Dispatch Console</p>
+          <h1>办公车载打印机器人</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="connection-pill" id="connectionPill">
+            <span class="dot"></span>
+            <span id="connectionText">演示模式</span>
+          </div>
+          <button class="icon-button" id="refreshButton" type="button" title="刷新状态" aria-label="刷新状态">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 12a8 8 0 1 1-2.34-5.66" />
+              <path d="M20 4v6h-6" />
+            </svg>
+          </button>
+          <button class="primary-button" id="connectButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17a5 5 0 0 1 10 0" />
+              <path d="M4 14a9 9 0 0 1 16 0" />
+              <path d="M12 20h.01" />
+            </svg>
+            连接设置
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="status-grid" aria-label="机器人状态">
+          <article class="metric-panel">
+            <span class="metric-label">当前位置</span>
+            <strong id="locationValue">A 区走廊</strong>
+            <small id="floorValue">3F 办公区</small>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">车载打印状态</span>
+            <strong id="printerValue">待机</strong>
+            <small id="activeJobValue">无正在打印任务</small>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">预计等待</span>
+            <strong id="waitValue">0 分钟</strong>
+            <small id="queueValue">队列 0 个任务</small>
+          </article>
+          <article class="metric-panel">
+            <span class="metric-label">机器人电量</span>
+            <strong id="batteryValue">86%</strong>
+            <small id="networkValue">WiFi -55 dBm</small>
+          </article>
+        </section>
+
+        <section class="main-layout">
+          <div class="map-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Floor Map</p>
+                <h2 id="floorMapTitle">3F 工位与设备</h2>
+              </div>
+              <span class="state-badge" id="robotStateBadge">待命</span>
+            </div>
+            <div class="floor-map" id="floorMap" aria-label="办公楼层地图">
+              <svg id="floorMapSvg" viewBox="0 0 900 520" role="img" aria-labelledby="mapTitle">
+                <title id="mapTitle">办公区工位地图</title>
+                <image id="mapBackgroundImage" class="map-background-image" href="" x="24" y="34" width="852" height="452" preserveAspectRatio="xMidYMid meet" />
+                <g id="demoMapLayer">
+                  <rect x="24" y="34" width="852" height="452" rx="8" class="map-boundary" />
+                  <path d="M60 130 H840" class="corridor" />
+                  <path d="M60 330 H840" class="corridor" />
+                  <path d="M250 64 V456" class="corridor" />
+                  <path d="M610 64 V456" class="corridor" />
+                  <g class="room">
+                    <rect x="78" y="60" width="136" height="88" />
+                    <text x="146" y="110">研发 A</text>
+                  </g>
+                  <g class="room">
+                    <rect x="78" y="176" width="136" height="112" />
+                    <text x="146" y="236">财务 B</text>
+                  </g>
+                  <g class="room">
+                    <rect x="78" y="354" width="136" height="96" />
+                    <text x="146" y="407">前台</text>
+                  </g>
+                  <g class="room">
+                    <rect x="322" y="60" width="216" height="88" />
+                    <text x="430" y="110">会议室</text>
+                  </g>
+                  <g class="room">
+                    <rect x="322" y="176" width="216" height="112" />
+                    <text x="430" y="236">产品 C</text>
+                  </g>
+                  <g class="room">
+                    <rect x="322" y="354" width="216" height="96" />
+                    <text x="430" y="407">设计 D</text>
+                  </g>
+                  <g class="room">
+                    <rect x="678" y="60" width="144" height="88" />
+                    <text x="750" y="110">设备区</text>
+                  </g>
+                  <g class="room">
+                    <rect x="678" y="176" width="144" height="112" />
+                    <text x="750" y="236">行政 E</text>
+                  </g>
+                  <g class="room">
+                    <rect x="678" y="354" width="144" height="96" />
+                    <text x="750" y="407">充电点</text>
+                  </g>
+                </g>
+                <path id="routeLine" class="route-line" d="M782 151 L610 151 L610 130 L466 130 L466 151" />
+                <g id="stationMarkers"></g>
+                <g id="robotMarker" class="robot-marker" transform="translate(782 151)">
+                  <circle r="18" />
+                  <path d="M-7 -3h14v10H-7zM-4 -8h8M-10 4h-5M10 4h5" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <aside class="task-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">New Job</p>
+                <h2>提交车载打印</h2>
+              </div>
+              <button class="icon-button" id="resetFormButton" type="button" title="清空表单" aria-label="清空表单">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 6h18" />
+                  <path d="M8 6V4h8v2" />
+                  <path d="M19 6l-1 14H6L5 6" />
+                </svg>
+              </button>
+            </div>
+
+            <form id="jobForm" class="job-form">
+              <label class="drop-zone" id="dropZone">
+                <input id="fileInput" type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt" required />
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="M7 8l5-5 5 5" />
+                  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                </svg>
+                <span id="fileLabel">选择或拖入文件</span>
+              </label>
+
+              <div class="form-grid">
+                <label>
+                  <span>目标工位</span>
+                  <select id="targetStation" name="targetStation" required></select>
+                </label>
+                <label>
+                  <span>接收人</span>
+                  <input id="recipient" name="recipient" type="text" placeholder="姓名或工号" required />
+                </label>
+                <label>
+                  <span>份数</span>
+                  <input id="copies" name="copies" type="number" min="1" max="20" value="1" />
+                </label>
+                <label>
+                  <span>页码</span>
+                  <input id="pages" name="pages" type="text" placeholder="全部 / 1-3,8" value="全部" />
+                </label>
+              </div>
+
+              <div class="segmented-group" role="group" aria-label="颜色模式">
+                <input type="radio" id="mono" name="colorMode" value="mono" checked />
+                <label for="mono">黑白</label>
+                <input type="radio" id="color" name="colorMode" value="color" />
+                <label for="color">彩色</label>
+              </div>
+
+              <div class="segmented-group" role="group" aria-label="单双面">
+                <input type="radio" id="single" name="duplex" value="single" checked />
+                <label for="single">单面</label>
+                <input type="radio" id="double" name="duplex" value="duplex" />
+                <label for="double">双面</label>
+              </div>
+
+              <div class="segmented-group" role="group" aria-label="打印方式">
+                <input type="radio" id="mobilePrint" name="printMode" value="mobile_print" checked />
+                <label for="mobilePrint">边走边打印</label>
+                <input type="radio" id="manualPrint" name="printMode" value="manual_at_station" />
+                <label for="manualPrint">到达后人工</label>
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  <span>纸张</span>
+                  <select id="paperSize" name="paperSize">
+                    <option>A4</option>
+                    <option>A3</option>
+                    <option>Letter</option>
+                  </select>
+                </label>
+                <label>
+                  <span>优先级</span>
+                  <select id="priority" name="priority">
+                    <option value="normal">普通</option>
+                    <option value="high">加急</option>
+                    <option value="batch">批量顺路</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="code-field">
+                <span>交付码</span>
+                <div>
+                  <input id="pickupCode" name="pickupCode" type="text" readonly />
+                  <button class="icon-button" id="regenCodeButton" type="button" title="重新生成" aria-label="重新生成交付码">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 12a8 8 0 1 1-2.34-5.66" />
+                      <path d="M20 4v6h-6" />
+                    </svg>
+                  </button>
+                </div>
+              </label>
+
+              <p class="connection-guard" id="connectionGuard" hidden>真实模式未连接 RDK X5，任务下发已锁定</p>
+
+              <button class="submit-button" id="submitJobButton" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h14" />
+                  <path d="M13 5l7 7-7 7" />
+                </svg>
+                下发任务
+              </button>
+            </form>
+          </aside>
+        </section>
+
+        <section class="jobs-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Queue</p>
+              <h2>任务队列</h2>
+            </div>
+            <div class="queue-tabs" role="tablist" aria-label="任务筛选">
+              <button class="tab active" type="button" data-filter="all">全部</button>
+              <button class="tab" type="button" data-filter="active">进行中</button>
+              <button class="tab" type="button" data-filter="done">已完成</button>
+            </div>
+          </div>
+          <div id="jobsList" class="jobs-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="connectDialog" class="settings-dialog">
+      <form method="dialog" id="settingsForm">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Connection</p>
+            <h2>连接设置</h2>
+          </div>
+          <button class="icon-button" value="cancel" type="submit" title="关闭" aria-label="关闭">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <label>
+          <span>工作模式</span>
+          <select id="modeSelect" name="mode">
+            <option value="mock">演示模式</option>
+            <option value="rdk">RDK X5</option>
+          </select>
+        </label>
+        <label>
+          <span>HTTP API</span>
+          <input id="apiBaseInput" name="apiBase" type="url" placeholder="http://192.168.1.20:8080" />
+        </label>
+        <label>
+          <span>rosbridge WebSocket</span>
+          <input id="rosbridgeInput" name="rosbridgeUrl" type="url" placeholder="ws://192.168.1.20:9090" />
+        </label>
+        <label>
+          <span>状态 Topic</span>
+          <input id="statusTopicInput" name="statusTopic" type="text" value="/print_robot/status" />
+        </label>
+        <div class="dialog-actions">
+          <button class="secondary-button" id="disconnectButton" type="button">断开</button>
+          <button class="primary-button" id="saveSettingsButton" value="default" type="submit">连接</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
